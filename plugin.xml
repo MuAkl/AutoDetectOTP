@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-autodetectotp" version="0.0.1">
+    <name>AutoDetectOTP</name>
+
+    <description>An Android Cordova plugin that detects and autofill OTP into required input.</description>
+    <license>MIT</license>
+
+    <keywords>cordova,android,toast,message,alert</keywords>
+    <repo>https://github.com/MuAkl/AutoDetectOTP/Toast-PhoneGap-Plugin.git</repo>
+    <issue>https://github.com/MuAkl/AutoDetectOTP/issues</issue>
+  
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+  
+    <js-module src="www/autodetectotp.js" name="autoDetectOTP">
+        <clobbers target="window.plugins.autoDetectOTP" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AutoDetectOTP">
+                <param name="android-package" value="com.muakl.cordova.plugin.AutoDetectOTP"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/AutoDetectOTP.java" target-dir="src/com/muakl/cordova/plugin" />
+    </platform>
+</plugin>

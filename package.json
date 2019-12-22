@@ -1,0 +1,35 @@
+{
+    "name": "cordova-plugin-autodetectotp",
+    "version": "0.0.1",
+    "description": "An Android Cordova plugin that allows users to display simple Toast messages at the bottom of the screen.",
+    "cordova": {
+      "id": "cordova-plugin-autodetectotp",
+      "platforms": [
+        "android"
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/MuAkl/autodetectotp.git"
+    },
+    "keywords": [
+      "Toast",
+      "Notification",
+      "Message",
+      "Alert",
+      "ecosystem:cordova",
+      "cordova-android"
+    ],
+    "engines": [
+      {
+        "name": "cordova",
+        "version": ">=3.0.0"
+      }
+    ],
+    "author": "Stanley Idesis <stan.idesis@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/MuAkl/AutoDetectOTP/issues"
+    },
+    "homepage": "https://github.com/MuAkl/AutoDetectOTP/"
+  }

@@ -12,13 +12,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 public class AutoDetectOTP extends CordovaPlugin {
   private static final String DURATION_LONG = "long";
-  @Override
-  public boolean execute(String action, JSONArray args,
+  //@Override
+  public PluginResult execute(String action, JSONArray args,
     final CallbackContext callbackContext) {
       // Verify that the user sent a 'show' action
       if (!action.equals("show")) {
         callbackContext.error("\"" + action + "\" is not a recognized action.");
-        return false;
+        return new PluginResult(PluginResult.Status.INVALID_ACTION);//false;
       }
       String message;
       String duration;
@@ -28,7 +28,7 @@ public class AutoDetectOTP extends CordovaPlugin {
         duration = options.getString("duration");
       } catch (JSONException e) {
         callbackContext.error("Error encountered: " + e.getMessage());
-        return false;
+        return new PluginResult(PluginResult.Status.ERROR);//false;
       }
       Pattern p = Pattern.compile("\\d{3,8}");
             Matcher m = p.matcher(message);
@@ -47,6 +47,6 @@ public class AutoDetectOTP extends CordovaPlugin {
       // Send a positive result to the callbackContext
       PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
       callbackContext.sendPluginResult(pluginResult);
-      return true;
+      return new PluginResult(PluginResult.Status.OK, OTP);//true;
   }
 }

@@ -12,7 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 public class AutoDetectOTP extends CordovaPlugin {
   private static final String DURATION_LONG = "long";
-  //@Override
+  @Override
   public PluginResult execute(String action, JSONArray args,
     final CallbackContext callbackContext) {
       // Verify that the user sent a 'show' action
